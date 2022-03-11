@@ -2,6 +2,8 @@
 /// Listas: são estruturas de dados que permitem armazenar dados
 /// de forma sequencial.
 /// São indicadas por um par de colchetes '[]'
+import 'dart:math';
+
 void main() {
   // declaração de uma lista do tipo 'string' (texto)
   // Vamos usar o símbolo "<>" diamond
@@ -100,4 +102,59 @@ void main() {
   // Na próxima aula
   // Remoção por lambda, ordenação, valores repetidos
   // contains, pesquisas, mesclagem (imperativa e funcional)
+
+  var nomes = <String>['Ana', 'Luciana', 'Edson', 'Pedro', 'Tina'];
+  print(nomes);
+
+  // nomes.removeWhere((String nome) => nome == 'Ana');
+  // print(nomes);
+/*
+  //Remover mais de um item diferente
+  nomes.removeWhere((String n) => n == 'Pedro' || n == 'Tina');
+  print(nomes);
+
+  nomes.removeWhere((String n) => ['Edson', 'Pedro'].contains(n));
+  print(nomes);
+
+  nomes.removeWhere((String n) => ['Ana'].contains(n));
+  print(nomes);
+*/
+
+  //Alterar dados em  uma lista
+  //Basta indicar o índice e atribuir o novo valor
+  nomes[0] = 'Pica Pau';
+  print(nomes);
+
+  print(nomes..sort());
+  print(nomes..reversed);
+  print(nomes);
+
+  //outro método de ordenação
+  nomes.sort((x, y) => x.compareTo(y));
+  print(nomes);
+
+  //outro método de ordenação(decrecente)
+  nomes.sort((y, x) => x.compareTo(y));
+  print(nomes);
+
+  //mesclagem de listas
+  //Funcinal - altera o estado das listas
+  var x = ['Casa', 'Tapete'];
+  var y = ['Marcelo', 'Prego'];
+  var saida = [x, y].expand((b) => b).toList();
+  print(saida);
+  print(x);
+  print(y);
+
+  ///Atividade - dica: import 'dart:math'
+  ///Criar uma lista com 50 números aleatórios
+  ///1 - Excluir apenas os que forem menores que 10
+  ///2 - Verificar se o número 77 está na lista
+  ///3 - Criar uma lista com 10 números negativos e incorporar a lista (1)
+  ///4 - mostrar o conteúdo da lista em ordem decresente
+  
+
+
+
+  
 }
