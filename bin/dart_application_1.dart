@@ -152,9 +152,22 @@ void main() {
   ///2 - Verificar se o número 77 está na lista
   ///3 - Criar uma lista com 10 números negativos e incorporar a lista (1)
   ///4 - mostrar o conteúdo da lista em ordem decresente
-  
 
+  var rnd = Random();
+  var numeros = List.generate(50, (_) => rnd.nextInt(101));
+  print(numeros);
 
+  // remover menores que 10
+  numeros.removeWhere((int e) => e < 10);
 
-  
+  // Será que 77 está na lista?
+  print(numeros.contains(77));
+
+  var negativos = [-1, -13, -9, -16, -30, -87, -4, -5, -3, -1];
+  numeros.addAll(negativos);
+  print(numeros);
+
+  // ordem decrescente
+  numeros.sort((y, x) => x.compareTo(y));
+  print(numeros);
 }
